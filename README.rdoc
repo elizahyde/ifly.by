@@ -7,8 +7,7 @@ Setup:
 5. rake db:migrate
 6. rake db:seed
 
-
-Oceanic
+ifly.by
 
 This is an airline reservation system. Visitors can search for flights by origin airport, destination airport, and date/time of flight. A flight also has seats, which are organized into some kind of grid. After finding flights, a visitor can view the seat map and purchase a particular seat.
 
