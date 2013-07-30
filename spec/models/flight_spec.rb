@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Flight do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @flight = FactoryGirl.create(:flight)
+  end
+
+  it "has arrival airport" do
+   expect(@flight.arrival_airport).to eq("SFO")
+  end
 end
