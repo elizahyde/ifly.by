@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
-    @flights = Flight.search do 
+    @flights = Flight.search do
       fulltext params[:search]
     end
     @flights = @search.result
