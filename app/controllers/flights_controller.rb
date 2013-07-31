@@ -17,6 +17,7 @@ class FlightsController < ApplicationController
       @flights = search.results
 
     end
+
     #@flights = Flight.search do
       #fulltext params[:search]
     #end

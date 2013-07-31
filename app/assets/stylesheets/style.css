@@ -18,8 +18,30 @@
 
 }
 
-.header {
+/*.header {
   background-image: url(http://www.stripemania.com/cache/7-18-0-4-040845-1-4A4A4A-DDEE1E-DDEE1E-DDEE1E-DDEE1E-3F3E40-78D316-78D316-78D316-78D316-no-yes-yes-yes-yes-.png);
   background-repeat: repeat;
 
+  color: white;
+  width: 150px;
+  font-size: 22px;
+  height: 50px;
+}
+*/
+body {
+  margin:0;
+  padding:0;
+}
+
+.navbar{
+  background-color: magenta;
+}
+
+.navbar-brand{
+  font-size: 30px;
+  color: black;
+}
+
+.btn {
+  margin-right: 30px;
 }
