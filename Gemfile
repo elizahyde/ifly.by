@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'dotenv-rails'
+gem 'devise'
 
 group :development do
   gem 'better_errors'
