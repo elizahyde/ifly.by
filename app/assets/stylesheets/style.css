@@ -3,6 +3,12 @@
 /*Virgin America Colors*/
 
 /*White: #FFFFFF Light Grey #818687 Red #D10000 purple #4B007F darkgrey #3B3C3F */
+body {
+  margin:0;
+  padding:0;
+  color: #3B3C3F;
+  padding-top: 70px;
+}
 
 .nav > li > a {
   background-color: #4B007F;
@@ -48,11 +54,7 @@
   height: 50px;
 }
 */
-body {
-  margin:0;
-  padding:0;
-  color: #3B3C3F;
-}
+
 
 a {
   color: #4B007F;
