@@ -7,6 +7,10 @@ Setup:
 5. rake db:migrate
 6. rake db:seed
 
+
+10000. rails generate sunspot_rails:install
+
+bundle exec rake sunspot:solr:start
 ifly.by
 
 This is an airline reservation system. Visitors can search for flights by origin airport, destination airport, and date/time of flight. A flight also has seats, which are organized into some kind of grid. After finding flights, a visitor can view the seat map and purchase a particular seat.
