@@ -27,7 +27,19 @@
          <% end %>
        </ul>
 
-     <form class="navbar-form form-inline">
+<!--       <% form_tag search_path, :method => "get", :class => "navbar-form form-inline" do %>
+        <div class="col-lg-4">
+          <div class="input-group">
+            <% text_field_tag "query" %>
+              <% button_tag "Search", :type => "submit", :name => nil %>
+          </div>
+        </div>
+      <% end %>
+      </form> -->
+
+
+
+     <form class="navbar-form form-inline" :method => "get" do>
        <div class="col-lg-4">
         <div class="input-group">
          <input type="text" class="form-control">
