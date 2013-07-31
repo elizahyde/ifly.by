@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130731001820) do
-
+ActiveRecord::Schema.define(:version => 20130731003616) do
 
   create_table "flights", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -42,5 +41,13 @@ ActiveRecord::Schema.define(:version => 20130731001820) do
 
   add_index "passengers", ["email"], :name => "index_passengers_on_email", :unique => true
   add_index "passengers", ["reset_password_token"], :name => "index_passengers_on_reset_password_token", :unique => true
+
+  create_table "tickets", :force => true do |t|
+    t.string   "seat"
+    t.integer  "flight_id"
+    t.integer  "passenger_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
 end
