@@ -1,1 +1,8 @@
 /* ADD ANY CSS HERE. DO NOT EDIT BOOTSTRAP .CSS */
+
+.plane {
+  color: white;
+  width: 150px;
+  font-size: 22px;
+  height: 50px;
+}
