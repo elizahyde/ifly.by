@@ -20,12 +20,16 @@
               <li><%= link_to "sign in", new_passenger_session_path %></li>
                 <li><%= link_to "sign up", new_passenger_registration_path %></li>
             <% end %>
+            <li>
+              <%= form_tag search_path, :method => :get do %>
+                  <%= text_field_tag :query %>
+
+              <% end %>
+            </li>
             <% flash.each do |k,v| %>
               <div><%= v %></div>
             <% end %>
-            <% form_tag search_path, :method => "get" do %>
-              <%= search_field_tag "query" %>
-              <%= button_tag "Search", :type => "submit", :name => nil %>
+
           </ul>
           <h3 class="plane">iFly.by</h3>
         </div>
