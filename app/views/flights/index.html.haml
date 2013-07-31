@@ -1,0 +1,11 @@
+%h1 Flights
+
+
+
+%ul
+  - @flights.each do |flight|
+    %li
+      = link_to flight.arrival_datetime
+
+
+%hr

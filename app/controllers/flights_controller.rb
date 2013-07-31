@@ -6,10 +6,21 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
-    @flights = Flight.search do
-      fulltext params[:search]
+    search_query = params[:query]
+
+    if search_query.blank?
+      @flights = Flight.all
+
+    else
+      #@articles = Article.where("name @@ :q or content @@ :q", :q => "%#{search_query}%")
+      search = Flight.search { fulltext search_query }
+      @flights = search.results
+
     end
-    @flights = @search.result
+    #@flights = Flight.search do
+      #fulltext params[:search]
+    #end
+    #@flights = @search.result
   end
 
   def new
