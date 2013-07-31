@@ -43,3 +43,31 @@ Flight.create( arrival_airport: arrival_airport,
  )
 
 end
+
+
+=begin
+def get_ids
+  flights = Flight.all
+  flight_ids = []
+  flights.each do |flight|
+  flight_ids << flight.id
+  end
+  return flight_ids
+end
+=end
+
+def seed_tickets
+  flights = Flight.all
+  flight_ids = []
+  flights.each do |flight|
+    flight_ids << flight.id
+  end
+  flight_ids.each do |flight_id|
+    seatcount = 0
+    50.times do |ticket|
+      Ticket.create(flight_id: flight_id, seat:(seatcount = seatcount + 1))
+    end
+  end
+end
+
+seed_tickets
