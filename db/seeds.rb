@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-arrival_airport
 
 flight_list = [
 ["LAX", "SFO", "2013-07-30 17:30:00", "2013-07-30 20:30:00", "VA069X", "Virgin Airlines" ],
@@ -34,8 +33,7 @@ flight_list = [
 ]
 
 flight_list.each do |arrival_airport, departure_airport, departure_datetime, arrival_datetime, flight_code, airline|
-Flight.create(
-  arrival_airport: arrival_airport,
+Flight.create( arrival_airport: arrival_airport,
   departure_airport: departure_airport,
   departure_datetime: departure_datetime,
   arrival_datetime: arrival_datetime,
