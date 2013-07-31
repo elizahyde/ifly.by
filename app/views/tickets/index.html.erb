@@ -1,18 +1,1 @@
-<div class="pick_seat">
-  <div class="page-header">
-    <h1><%= flight.airline %> <%= flight.number %><%= flight.datetime %><small>Pick your seat</small></h1>
-  </div>
-  <div class="seatmap">
-    <% @tickets.flight.each do |ticket| %>
-      <% if ticket.passenger == nil %>
-        <div class="ticket available" id="<%= ticket.id %>"><%= ticket.seat %>
-          <% link_to("S#{ticket.seat}", "#")%>
-        </div>
-      <% else%>
-        <div class="ticket purchased" id="<%= ticket.id %>"><%= ticket.seat %>
-          <% "S#{ticket.seat}" %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+AMAZING APP!!
