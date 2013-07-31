@@ -12,7 +12,7 @@ class FlightsController < ApplicationController
       @flights = Flight.all
 
     else
-      #@articles = Article.where("name @@ :q or content @@ :q", :q => "%#{search_query}%")
+      @flights = Flight.where("airline @@ :q or departure_airport @@ :q", :q => "%#{search_query}%")
       search = Flight.search { fulltext search_query }
       @flights = search.results
 
