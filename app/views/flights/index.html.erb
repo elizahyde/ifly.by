@@ -1,0 +1,26 @@
+
+<h1> Flight</h1>
+
+<table>
+  <tr>
+    <th> Airline </th>
+    <th> Flight Code </th>
+    <th> Departure Airport </th>
+    <th> Arrival Airport </th>
+    <th> Departure Time </th>
+    <th> Arrival Time</th>
+  </tr>
+
+
+  <% @flights.each do |flight| %>
+    <tr>
+      <td><%= flight.airline %></td>
+      <td><%= link_to flight.flight_code %></td>
+      <td><%= flight.departure_airport %></td>
+      <td><%= flight.arrival_airport %></td>
+      <td><%= flight.departure_datetime %></td>
+      <td><%= flight.arrival_datetime%></td>
+    </tr>
+  <% end %>
+
+</table>
