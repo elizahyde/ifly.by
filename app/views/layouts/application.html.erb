@@ -16,7 +16,7 @@
     <a class="navbar-brand plane" href="#">ifly.by</a>
        <ul class="nav nav-pills pull-right">
          <% if passenger_signed_in? %>
-         <li><a href="#">Tickets</a></li>
+         <li><a href="#">My Tickets</a></li>
            <li><%= link_to "sign out", destroy_passenger_session_path, :method => :delete %></li>
          <% else %>
            <li><%= link_to "sign in", new_passenger_session_path %></li>
