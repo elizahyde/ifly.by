@@ -6,3 +6,21 @@
   font-size: 22px;
   height: 50px;
 }
+
+body {
+  margin:0;
+  padding:0;
+}
+
+.navbar{
+  background-color: gold; /*/loldwayne/*/
+}
+
+.navbar-brand{
+  font-size: 30px;
+  color: black;
+}
+
+.btn btn-default navbar-btn{
+  margin-right: 30px;
+}

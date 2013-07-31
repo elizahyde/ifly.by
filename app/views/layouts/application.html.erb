@@ -10,25 +10,25 @@
   <script src="http://code.jquery.com/jquery.js"></script>
 </head>
 <body>
-  <div class="container-narrow">
-        <div class="header">
-          <ul class="nav nav-pills pull-right">
-            <% if passenger_signed_in? %>
-              <li><%= link_to "sign out", destroy_passenger_session_path, :method => :delete %></li>
-              <li><a href="#">Tickets</a></li>
-            <% else %>
-              <li><%= link_to "sign in", new_passenger_session_path %></li>
-                <li><%= link_to "sign up", new_passenger_registration_path %></li>
-            <% end %>
-            <% flash.each do |k,v| %>
-              <div><%= v %></div>
-            <% end %>
-          </ul>
-          <h3 class="text-muted">iFly.by</h3>
-        </div>
-
-
-
+ <div class="navbar">
+   <a class="navbar-brand" href="#">ifly.by</a>
+   <ul class="nav navbar-nav pull-right">
+     <% if passenger_signed_in? %>
+      <li><%= button_to "sign out", destroy_passenger_session_path, :method => :delete, :class => "btn btn-default navbar-btn" %></li>
+       <li><a href="#">Tickets</a></li>
+     <% else %>
+       <li><%= button_to "sign in", new_passenger_session_path, :class => "btn btn-default navbar-btn" %></li>
+         <li><%= button_to "sign up", new_passenger_registration_path, :class => "btn btn-default navbar-btn" %></li>
+     <% end %>
+     <% flash.each do |k,v| %>
+       <div><%= v %></div>
+     <% end %>
+     <form class="navbar-form pull-left">
+       <input type="text" class="form-control" style="width: 200px;">
+       <button type="submit" class="btn btn-default">Search</button>
+     </form>
+   </ul>
+ </div>
 <%= yield %>
 
 </body>
