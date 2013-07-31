@@ -10,9 +10,6 @@ class TicketsController < ApplicationController
   def show
   end
 
-  def index
-  end
-
   def pick
     #@tickets = Ticket.where(:flight_id => params[:flight_id]).sort
 
