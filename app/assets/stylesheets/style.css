@@ -1,4 +1,25 @@
 /* ADD ANY CSS HERE. DO NOT EDIT BOOTSTRAP .CSS */
+
+/*Virgin America Colors*/
+
+/*White: #FFFFFF Light Grey #818687 Red #D10000 purple #4B007F darkgrey #3B3C3F */
+
+.nav > li > a {
+  background-color: #4B007F;
+  position: relative;
+  margin-right: 10px;
+  color: #ffffff;
+  border-color: #474949;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 6px;
+}
+
 @font-face {
     font-family: 'airstream';
     src: url('Airstream.eot');
@@ -10,12 +31,11 @@
     font-style: normal;
 }
 
-.plane {
-  color: silver;
+.navbar-brand {
+  color: white;
   font-family: 'airstream', Arial, sans-serif;
   font-size: 42px;
   margin-left: 10px;
-
 }
 
 /*.header {
@@ -31,17 +51,17 @@
 body {
   margin:0;
   padding:0;
+  color: #3B3C3F;
 }
 
+a {
+  color: #4B007F;
+}
 .navbar{
-  background-color: magenta;
-}
-
-.navbar-brand{
-  font-size: 30px;
-  color: black;
+  background-color: #D10000;
 }
 
 .btn {
-  margin-right: 30px;
+  margin-right: 10px;
+  background-color: #4B007F;
 }
