@@ -6,18 +6,9 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
-    search_query = params[:query]
 
-    if search_query.blank?
-      @flights = Flight.all
 
-    else
-      @flights = Flight.where("airline @@ :q or departure_airport @@ :q", :q => "%#{search_query}%")
-      search = Flight.search { fulltext search_query }
-      @flights = search.results
-
-    end
-
+ 
     #@flights = Flight.search do
       #fulltext params[:search]
     #end
