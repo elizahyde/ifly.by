@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Passenger.new({ :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'}).save
+Passenger.create({ :email => 'admin@example.com', :password => 'password', :password_confirmation => 'password'})
 
 
 # flight_list = [

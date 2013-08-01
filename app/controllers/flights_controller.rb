@@ -1,4 +1,5 @@
 class FlightsController < ApplicationController
+  before_filter :not_admin_authorized, :except => [:index]
   def create
     @flight = Flight.create(params[:flight])
     @flight.save
@@ -11,10 +12,8 @@ class FlightsController < ApplicationController
   end
 
   def index
+    admin_authorized
     @flights = Flight.all
-
-
-
     #@flights = Flight.search do
       #fulltext params[:search]
     #end
