@@ -1,7 +1,6 @@
 class FlightsController < ApplicationController
   def create
-    @flight = Flight.create(params[:flight])
-    @flight.save
+    @flights = Flight.create(params[:flight])
   end
 
   def index
