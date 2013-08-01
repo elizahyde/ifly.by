@@ -1,18 +1,18 @@
 class Flight < ActiveRecord::Base
   belongs_to :plane
-  attr_accessible :arrival_airport, :arrival_datetime, :departure_datetime, :departure_airport, :flight_code
+  attr_accessible :arrival_airport, :arrival_datetime, :departure_datetime, :departure_airport, :flight_code, :plane_id
 
-	after_create :make_ticket
-	def make_ticket
-		#create tickets by row, seat & create same flight id    
-		binding.pry  
-    ('A'..'G').each do |current_row|
-      (1..10).each do |current_column|
-          self.id.each do |flight_id|
-          Ticket.create({:row => current_row, :column => current_column, :flight_id => flight.id})
+  after_create :make_ticket
+  def make_ticket
+    #create tickets by row, seat & create same flight id
+    rows = self.plane.row
+    col = self.plane.column
+    columns = ("A"..."Z").to_a[0...col]
+    columns.each do |col|
+      rows.times do |row|
+        Ticket.create(seat:"#{col}#{row}", flight_id:self.id)
       end
     end
   end
-end
 
 end
