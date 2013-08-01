@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def home_page
-    render
+    @flights = Flight.all
 
   end
 

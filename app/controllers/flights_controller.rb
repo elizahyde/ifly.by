@@ -2,6 +2,11 @@ class FlightsController < ApplicationController
   def create
     @flight = Flight.create(params[:flight])
     @flight.save
+    @flights = Flight.all
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js
+    end
   end
 
   def index
