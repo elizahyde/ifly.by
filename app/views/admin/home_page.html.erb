@@ -6,7 +6,26 @@
 
 <div id ="newflight_window"></div>
 <div id ="new_plane_window"></div>
+<div id ="show_planes_table">
+  <h1>Planes</h1>
+  <table>
+    <tr>
+      <th> Plane name </th>
+      <th> Row </th>
+      <th> Column </th>
+    </tr>
+    <% @planes.each do |plane| %>
+      <tr>
+        <td><%= plane.plane_name %></td>
+        <td><%= plane.row %></td>
+        <td><%= plane.column %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
 <div id ="show_flights_table">
+
 
   <h1> Flight</h1>
 

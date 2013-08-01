@@ -1,0 +1,20 @@
+<%= form_for @plane, :remote => true do |f| %>
+
+  <div class="field">
+    <%= f.label :plane_name %><br />
+    <%= f.text_field :plane_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :row %><br />
+    <%= f.text_field :row %>
+  </div>
+  <div class="field">
+    <%= f.label :column %><br />
+    <%= f.text_field :column %>
+  </div>
+
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
