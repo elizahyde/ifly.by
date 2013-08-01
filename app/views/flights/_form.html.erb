@@ -1,0 +1,33 @@
+<form_tag new_flight_path, :remote => true, :method => :post do >
+
+<div class="field">
+	<%= label_tag :arrival_airport %><br/>
+	<%= text_field_tag :arrival_airport %>
+</div>
+
+<div class="field">
+	<%= label_tag :departure_airport %><br/>
+	<%= text_field_tag :departure_airport %>
+</div>
+
+<div class="field">
+	<%= label_tag :flight_code %><br/>
+	<%= text_field_tag :flight_code %>
+</div>
+
+<div class="field">
+	<%= label_tag :arrival_datetime%><br/>
+	<%= datetime_field :arrival_datetime %>
+</div>
+
+<div class="field">
+	<%= label_tag :departure_datetime %><br/>
+	<%= datetime_field :departure_datetime %>
+</div>
+
+
+<div class="actions">
+	<%= submit_tag "Submit" %>
+</div>
+
+<% end %>
