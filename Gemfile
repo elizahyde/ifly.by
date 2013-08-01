@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'dotenv-rails'
 gem 'devise'
+gem 'geocoder'
 
 
 group :development do

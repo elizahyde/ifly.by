@@ -79,6 +79,7 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.9.0)
+    geocoder (1.1.8)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -197,6 +198,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  geocoder
   jquery-rails
   meta_request
   pg
