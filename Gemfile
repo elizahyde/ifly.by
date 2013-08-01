@@ -5,8 +5,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'dotenv-rails'
 gem 'devise'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+# gem 'sunspot_rails'
+# gem 'sunspot_solr'
 
 group :development do
   gem 'better_errors'
