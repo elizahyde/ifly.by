@@ -1,0 +1,54 @@
+<%= link_to "New Flight", new_flight_path, :remote => true %>
+
+<%= link_to "New Plane", new_plane_path, :remote => true %>
+
+
+
+<div id ="newflight_window"></div>
+<div id ="new_plane_window"></div>
+<div id ="show_planes_table">
+  <h1>Planes</h1>
+  <table>
+    <tr>
+      <th> Plane name </th>
+      <th> Row </th>
+      <th> Column </th>
+    </tr>
+    <% @planes.each do |plane| %>
+      <tr>
+        <td><%= plane.plane_name %></td>
+        <td><%= plane.row %></td>
+        <td><%= plane.column %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div id ="show_flights_table">
+
+
+  <h1> Flight</h1>
+
+  <table>
+    <tr>
+      <th> Flight Code </th>
+      <th> Departure Airport </th>
+      <th> Arrival Airport </th>
+      <th> Departure Time </th>
+      <th> Arrival Time</th>
+    </tr>
+
+
+    <% @flights.each do |flight| %>
+      <tr>
+        <td><%= link_to flight.flight_code %></td>
+        <td><%= flight.departure_airport %></td>
+        <td><%= flight.arrival_airport %></td>
+        <td><%= flight.departure_datetime %></td>
+        <td><%= flight.arrival_datetime%></td>
+      </tr>
+    <% end %>
+
+  </table>
+
+</div>

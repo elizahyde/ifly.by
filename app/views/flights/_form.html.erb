@@ -1,0 +1,29 @@
+<%= form_for @flight, :remote => true do |f| %>
+
+  <div class="field">
+    <%= f.label :arrival_airport %><br />
+    <%= f.text_field :arrival_airport %>
+  </div>
+  <div class="field">
+    <%= f.label :departure_airport %><br />
+    <%= f.text_field :departure_airport %>
+  </div>
+ <div class="field">
+    <%= f.label :arrival_datetime %><br />
+    <%= f.datetime_select :arrival_datetime %>
+ </div>
+ <div class="field">
+    <%= f.label :departure_datetime %><br />
+    <%= f.datetime_select  :departure_datetime %>
+ </div>
+ <div class="field">
+    <%= f.label :flight_code %><br />
+    <%= f.text_field :flight_code %>
+ </div>
+
+
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
