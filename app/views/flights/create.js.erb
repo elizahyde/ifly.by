@@ -1,2 +1,2 @@
-var show_flights_table = $("show_flights_table");
-show_flights_table.empty().append("show_flights_table");
+var show_flights_table = $("#show_flights_table");
+show_flights_table.empty().append("<%= j render 'flights/flights' %>");

@@ -24,8 +24,10 @@
   <% end %>
 
 </table>
-<%= form_tag '/flights/destinations', :remote => true do |f| %>
+<%= form_tag '/flights', :remote => true do |f| %>
 <h4>Please Select Departure Airport.</h4>
 <select id ="departure_airport" class="input-large">
 <%= options_from_collection_for_select(Flight.all, :id, :departure_airport) %></select>
+
+<%= submit_tag 'Submit' %>
 <% end %>
