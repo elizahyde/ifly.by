@@ -1,26 +1,12 @@
 
-<h1> Flight</h1>
 
-<table>
-  <tr>
-    <th> Airline </th>
-    <th> Flight Code </th>
-    <th> Departure Airport </th>
-    <th> Arrival Airport </th>
-    <th> Departure Time </th>
-    <th> Arrival Time</th>
-  </tr>
+<%= form_tag '/flights', :remote => true do |f| %>
+<h4>Please Select Departure Airport.</h4>
+<select id="departure_airport" class="input-large">
+<%= options_from_collection_for_select(Flight.all, :id, :departure_airport) %></select>
+<h4>Please Select Arrival Airport.</h4>
+<select id="arrival_airport" class="input-large">
+<%= options_from_collection_for_select(Flight.all, :id, :arrival_airport) %></select>
 
-
-  <% @flights.each do |flight| %>
-    <tr>
-      <td><%= flight.airline %></td>
-      <td><%= link_to flight.flight_code %></td>
-      <td><%= flight.departure_airport %></td>
-      <td><%= flight.arrival_airport %></td>
-      <td><%= flight.departure_datetime %></td>
-      <td><%= flight.arrival_datetime%></td>
-    </tr>
-  <% end %>
-
-</table>
+<%= submit_tag 'Submit' %>
+<% end %>

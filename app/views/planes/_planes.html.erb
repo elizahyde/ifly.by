@@ -1,0 +1,15 @@
+  <h1>Planes</h1>
+  <table>
+    <tr>
+      <th> Plane name </th>
+      <th> Row </th>
+      <th> Column </th>
+    </tr>
+    <% @planes.each do |plane| %>
+      <tr>
+        <td><%= plane.plane_name %></td>
+        <td><%= plane.row %></td>
+        <td><%= plane.column %></td>
+      </tr>
+    <% end %>
+  </table>
