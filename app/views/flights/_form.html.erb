@@ -21,6 +21,11 @@
     <%= f.text_field :flight_code %>
  </div>
 
+ <div class="field">
+  <%= f.label :plane_id %>
+  <%= f.select :plane_id, options_from_collection_for_select(Plane.all, 'id', 'plane_name') %>
+ </div>
+
 
  <div class="actions">
     <%= f.submit %>

@@ -7,6 +7,7 @@ class FlightsController < ApplicationController
       format.html # new.html.erb
       format.js
     end
+
   end
 
   def index
