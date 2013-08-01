@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130801024721) do
-=======
-ActiveRecord::Schema.define(:version => 20130731235813) do
->>>>>>> d660584f6aa486929af02c781332eeb53c49849c
 
   create_table "flights", :force => true do |t|
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "arrival_airport"
     t.string   "departure_airport"
     t.datetime "arrival_datetime"
     t.datetime "departure_datetime"
     t.string   "flight_code"
     t.string   "airline"
+    t.float    "arrival_latitude"
+    t.float    "arrival_longitude"
+    t.float    "departure_latitude"
+    t.float    "departure_longitude"
   end
 
   create_table "passengers", :force => true do |t|
@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(:version => 20130731235813) do
   add_index "passengers", ["reset_password_token"], :name => "index_passengers_on_reset_password_token", :unique => true
 
   create_table "planes", :force => true do |t|
-    t.integer  "plane_model"
+    t.string   "plane_name"
     t.integer  "flight_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "row"
+    t.integer  "column"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tickets", :force => true do |t|
