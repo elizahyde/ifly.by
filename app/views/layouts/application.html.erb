@@ -13,18 +13,21 @@
   <div class="container">
    <ul class="nav navbar-nav">
     <a class="navbar-brand plane" href="#">ifly.by</a>
-       <ul class="nav nav-pills pull-right">
+       <ul class="nav nav-pills pull-right" id= "mybuttons">
          <% if passenger_signed_in? %>
          <li><a href="#">My Tickets</a></li>
-           <li><%= link_to "sign out", destroy_passenger_session_path, :method => :delete %></li>
+           <li><%= link_to "Sign Out", destroy_passenger_session_path, :method => :delete %></li>
          <% else %>
-           <li><%= link_to "sign in", new_passenger_session_path %></li>
-             <li><%= link_to "sign up", new_passenger_registration_path %></li>
+           <li><%= link_to "Sign In", new_passenger_session_path %></li>
+             <li><%= link_to "Sign Up", new_passenger_registration_path %></li>
          <% end %>
          <% flash.each do |k,v| %>
            <div><%= v %></div>
          <% end %>
        </ul>
+
+
+
 
 
    </ul>

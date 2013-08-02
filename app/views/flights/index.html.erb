@@ -1,16 +1,17 @@
 
-
+<div class="jumbotron">
+  <div id="welcome">Welcome!</div>
 <%= form_tag flights_filter_path, :method => "get", :remote => true do %>
-<h4>Please Select Departure Airport.</h4>
-<select id="departure_airport", name="departure_airport_id", class="input-large">
+<h3>Please Select Departure Airport.</h3>
+<select id="departure_airport", name="departure_airport_id", class="form-control">
 <%= options_from_collection_for_select(Airport.all, :id, :airport_code) %></select>
-<h4>Please Select Arrival Airport.</h4>
-<select id="arrival_airport", name="arrival_airport_id", class="input-large">
+<h3>Please Select Arrival Airport.</h3>
+<select id="arrival_airport", name="arrival_airport_id", class="form-control">
 <%= options_from_collection_for_select(Airport.all, :id, :airport_code) %></select>
 
-<%= submit_tag 'Submit' %>
+<%= submit_tag 'search', :class => "btn btn-default btn-large btn-block", :id=> "submitbutton" %>
 <% end %>
-
+</div>
 <div id="flights_filter_results">
   <%= render 'flights/results' %>
 </div>
