@@ -12,8 +12,11 @@ class FlightsController < ApplicationController
   end
 
   def flights_filter
-    binding.pry
     @flight_results = Flight.where(:arrival_airport_id => (params[:arrival_airport_id]), :departure_airport_id => (params[:departure_airport_id]))
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js
+    end
   end
 
   def index
