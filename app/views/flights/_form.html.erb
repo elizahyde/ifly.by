@@ -1,12 +1,12 @@
 <%= form_for @flight, :remote => true do |f| %>
 
   <div class="field">
-    <%= f.label :arrival_airport %><br />
-    <%= f.text_field :arrival_airport %>
+    <%= f.label :arrival_airport_id%><br />
+    <%= f.select :arrival_airport_id, options_from_collection_for_select(Airport.all, 'id', 'airport_code') %>
   </div>
   <div class="field">
-    <%= f.label :departure_airport %><br />
-    <%= f.text_field :departure_airport %>
+    <%= f.label :departure_airport_id %><br />
+    <%= f.select :departure_airport_id, options_from_collection_for_select(Airport.all, 'id', 'airport_code') %>
   </div>
  <div class="field">
     <%= f.label :arrival_datetime %><br />
