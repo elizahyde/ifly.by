@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_filter :not_admin_authorized, :except => [:index, :flights_filter]
+  before_filter :not_admin_authorized, :except => [:index, :flights_filter, :show]
   def create
     @flight = Flight.create(params[:flight])
     @flight.save
@@ -35,6 +35,11 @@ class FlightsController < ApplicationController
       format.html # new.html.erb
       format.js
     end
+  end
+
+
+  def show
+    @flight = Flight.find(params[:id])
   end
 end
 

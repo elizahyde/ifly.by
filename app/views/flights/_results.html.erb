@@ -14,7 +14,9 @@
 
   <% @flight_results.each do |flight| %>
     <tr>
-      <td><%= link_to flight.flight_code %></td>
+
+
+      <td><%=link_to "Show Flight", flight_path(flight) %></td>
       <td><%= flight.departure_airport.airport_code %></td>
       <td><%= flight.departure_airport.city %></td>
       <td><%= flight.arrival_airport.airport_code %></td>
