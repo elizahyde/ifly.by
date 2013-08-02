@@ -14,7 +14,6 @@ class FlightsController < ApplicationController
   def flights_filter
     @flight_results = Flight.where(:arrival_airport_id => (params[:arrival_airport_id]), :departure_airport_id => (params[:departure_airport_id]))
     respond_to do |format|
-      format.html # new.html.erb
       format.js
     end
   end
@@ -23,6 +22,7 @@ class FlightsController < ApplicationController
     admin_authorized
     @flights = Flight.all
     @airports = Airport.all
+    @flight_results = Flight.where(:arrival_airport_id => (params[:arrival_airport_id]), :departure_airport_id => (params[:departure_airport_id]))
     #@flights = Flight.search do
       #fulltext params[:search]
     #end

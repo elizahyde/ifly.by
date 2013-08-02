@@ -1,6 +1,6 @@
 
 
-<%= form_tag flights_filter_path, :remote => true do %>
+<%= form_tag flights_filter_path, :method => "get", :remote => true do %>
 <h4>Please Select Departure Airport.</h4>
 <select id="departure_airport", name="departure_airport_id", class="input-large">
 <%= options_from_collection_for_select(Airport.all, :id, :airport_code) %></select>
@@ -11,6 +11,6 @@
 <%= submit_tag 'Submit' %>
 <% end %>
 
-<div id="flight_filter_results">
+<div id="flights_filter_results">
   <%= render 'flights/results' %>
 </div>
