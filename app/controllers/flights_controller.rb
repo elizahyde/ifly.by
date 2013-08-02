@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_filter :not_admin_authorized, :except => [:index]
+  before_filter :not_admin_authorized, :except => [:index, :flights_filter]
   def create
     @flight = Flight.create(params[:flight])
     @flight.save
@@ -9,6 +9,11 @@ class FlightsController < ApplicationController
       format.js
     end
 
+  end
+
+  def flights_filter
+    binding.pry
+    @flight_results = Flight.where(:arrival_airport_id => (params[:arrival_airport_id]), :departure_airport_id => (params[:departure_airport_id]))
   end
 
   def index
