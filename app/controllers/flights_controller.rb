@@ -14,6 +14,7 @@ class FlightsController < ApplicationController
   def index
     admin_authorized
     @flights = Flight.all
+    @airports = Airport.all
     #@flights = Flight.search do
       #fulltext params[:search]
     #end

@@ -2,7 +2,7 @@ class Flight < ActiveRecord::Base
   belongs_to :plane
   belongs_to :arrival_airport, :class_name => "Airport"
   belongs_to :departure_airport, :class_name => "Airport"
-  attr_accessible :arrival_airport, :arrival_datetime, :departure_datetime, :departure_airport, :flight_code, :plane_id
+  attr_accessible :arrival_airport_id, :arrival_datetime, :departure_datetime, :departure_airport_id, :flight_code, :plane_id
 
   after_create :make_ticket
   def make_ticket

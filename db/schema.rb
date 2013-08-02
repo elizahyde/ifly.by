@@ -23,18 +23,13 @@ ActiveRecord::Schema.define(:version => 20130801230916) do
   end
 
   create_table "flights", :force => true do |t|
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "arrival_airport"
-    t.string   "departure_airport"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "arrival_airport_id"
+    t.integer  "departure_airport_id"
     t.datetime "arrival_datetime"
     t.datetime "departure_datetime"
     t.string   "flight_code"
-    t.string   "airline"
-    t.float    "arrival_latitude"
-    t.float    "arrival_longitude"
-    t.float    "departure_latitude"
-    t.float    "departure_longitude"
     t.integer  "plane_id"
   end
 
@@ -59,7 +54,6 @@ ActiveRecord::Schema.define(:version => 20130801230916) do
 
   create_table "planes", :force => true do |t|
     t.string   "plane_name"
-    t.integer  "flight_id"
     t.integer  "row"
     t.integer  "column"
     t.datetime "created_at", :null => false
