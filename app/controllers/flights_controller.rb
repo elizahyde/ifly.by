@@ -40,6 +40,14 @@ class FlightsController < ApplicationController
 
   def show
     @flight = Flight.find(params[:id])
+    @available_tickets = Array.new
+    @flight.tickets.each do |tix|
+      unless tix.purchased?
+        @available_tickets << tix.seat
+      end
+    end
+
+    @col = @flight.plane.column 
   end
 end
 

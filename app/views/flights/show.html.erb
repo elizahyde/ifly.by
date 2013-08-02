@@ -9,3 +9,33 @@
   <td><%= @flight.departure_datetime %></td>
   <td><%= @flight.arrival_datetime%></td>
 </table>
+
+
+
+<table border id="seat_chart" data-user="<%= current_passenger.id %>">
+	<tr>
+		<td></td>
+		
+		<% ('A'..'Z').to_a.first(@col).each do |col| %>
+		<td><%= col.to_s %></td>
+		<% end %>
+	</tr>
+
+	<% rows = @flight.plane.row %>
+	<% rows.times do |row| %>
+		<tr>
+			<td><%= row %></td>
+			<% ('A'..'Z').to_a.first(@col).each do |col| %>
+				<% seat = "#{col}#{row}" %>
+				<% if @available_tickets.include?(seat) %>
+					<td class="available success seat" data-seat="<%= seat %>">Available</td>
+				<% else %>
+					<td class="error seat" data-seat="<%= seat %>">Purchased</td>
+				<% end %>
+			<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<button id="Buy">Buy</button>
